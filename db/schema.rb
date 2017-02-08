@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208134150) do
+ActiveRecord::Schema.define(version: 20170208152034) do
+
+  create_table "impressions", force: true do |t|
+    t.string   "banner_id"
+    t.string   "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "impressions", ["campaign_id"], name: "index_impressions_on_campaign_id"
 
   create_table "users", force: true do |t|
     t.string   "token"
