@@ -4,6 +4,11 @@ class Impression < ActiveRecord::Base
 
   def self.empty_campaign?(campaign_id)
     Impression.where(campaign_id: campaign_id)
-      .count < 5
+      .distinct.count(:banner_id) < 5
+  end
+  
+  def self.get_random_banner(campaign_id)
+    Impression.where(campaign_id: campaign_id)
+      .sample(1).first.banner_id.to_i
   end
 end

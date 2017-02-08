@@ -20,7 +20,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0'
 gem 'rake', '~> 10.0.2'
-
+gem 'activerecord-import'
 
 group :doc do
   gem 'sdoc', require: false
