@@ -12,6 +12,10 @@ module CampaignsHelper
     "banner"
   end
   
+  def error_message
+    "error_message"
+  end
+  
   def banner_id
     @banners[@idx_to_show]
   end

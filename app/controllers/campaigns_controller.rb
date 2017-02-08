@@ -1,18 +1,27 @@
 class CampaignsController < ApplicationController
   def show
     @campaign_id = params[:id]
-    if new_user? || user_not_in_base?
-      proceed_new_user
+    if Impression.empty_campaign?(@campaign_id)
+      render error_message
     else
-      proceed_known_user
+      proceed_request
+      render banner
     end
-    render banner
+
   end
 
   def index
   end
   
   private
+  
+    def proceed_request
+      if new_user? || user_not_in_base?
+        proceed_new_user
+      else
+        proceed_known_user
+      end
+    end 
   
     def proceed_new_user
       create_user
