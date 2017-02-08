@@ -4,7 +4,7 @@ This is simple web-application to serve banners for an advertising agency.
 
 ## Introduction
 
-For this application "Rails" was chosen as a framework because it is very popular and there are a lot of tutorials and blog articles about it. Also, for this small 
+For this application Rails was chosen as a framework because it is very popular and there are a lot of tutorials and blog articles about it. Also, for this small 
 tutorial project, SQLite was chosen as a database since it is small and very simple. 
 
 ## Realisation
