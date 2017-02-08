@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208163745) do
+ActiveRecord::Schema.define(version: 20170208165253) do
 
   create_table "clicks", force: true do |t|
     t.string   "click_id"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20170208163745) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "conversions", force: true do |t|
+    t.string   "conversion_id"
+    t.string   "click_id"
+    t.decimal  "revenue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversions", ["click_id"], name: "index_conversions_on_click_id", unique: true
 
   create_table "impressions", force: true do |t|
     t.string   "banner_id"

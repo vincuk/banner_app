@@ -11,7 +11,13 @@ namespace :db do
     Click.transaction do
       clicks = CSV.read("db/tmp/clicks.csv")
       columns = [:click_id, :banner_id, :campaign_id]
-      Impression.import columns, clicks, validate: false
+      Click.import columns, clicks, validate: false
+    end
+    
+    Conversion.transaction do
+      conversions = CSV.read("db/tmp/conversions.csv")
+      columns = [:conversion_id, :click_id, :revenue]
+      Conversion.import columns, conversions, validate: false
     end
   end
 end

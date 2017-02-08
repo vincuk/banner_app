@@ -1,4 +1,6 @@
 class Click < ActiveRecord::Base
+  has_one :conversion
+
   validates :click_id, presence: true, uniqueness: true, numericality: { only_integer: true }
   validates :banner_id, presence: true, numericality: { only_integer: true }
   validates :campaign_id, presence: true, numericality: { only_integer: true }
