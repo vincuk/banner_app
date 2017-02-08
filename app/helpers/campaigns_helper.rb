@@ -33,7 +33,7 @@ module CampaignsHelper
   
   def init_campaign_cookies
     @idx_to_show = 0
-    @banners = [*1..5].shuffle
+    @banners = Campaign.get_banners(@campaign_id).shuffle
     cookies.permanent[campaign_banners] = @banners
     cookies.permanent[campaign_idx_to_show] = @idx_to_show
   end
