@@ -12,6 +12,6 @@ class Click < ActiveRecord::Base
       .order("COUNT(ALL) DESC")
       .count
       .take(5)
-      .map(&:first).map(&:to_i)
+      .map(&:first)
   end
 end

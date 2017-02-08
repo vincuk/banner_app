@@ -9,6 +9,6 @@ class Impression < ActiveRecord::Base
   
   def self.get_random_banner(campaign_id)
     Impression.where(campaign_id: campaign_id)
-      .sample(1).first.banner_id.to_i
+      .sample(1).first.banner_id
   end
 end

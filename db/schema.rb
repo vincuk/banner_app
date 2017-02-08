@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208165253) do
+ActiveRecord::Schema.define(version: 20170208185726) do
 
   create_table "clicks", force: true do |t|
-    t.string   "click_id"
-    t.string   "banner_id"
-    t.string   "campaign_id"
+    t.integer  "click_id",    limit: 255
+    t.integer  "banner_id",   limit: 255
+    t.integer  "campaign_id", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "conversions", force: true do |t|
-    t.string   "conversion_id"
-    t.string   "click_id"
+    t.integer  "conversion_id", limit: 255
+    t.integer  "click_id",      limit: 255
     t.decimal  "revenue"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20170208165253) do
   add_index "conversions", ["click_id"], name: "index_conversions_on_click_id", unique: true
 
   create_table "impressions", force: true do |t|
-    t.string   "banner_id"
-    t.string   "campaign_id"
+    t.integer  "banner_id",   limit: 255
+    t.integer  "campaign_id", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

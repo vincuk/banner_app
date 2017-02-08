@@ -15,7 +15,7 @@ class Campaign < ActiveRecord::Base
         .order("SUM(revenue) DESC")
         .sum(:revenue)
         .take(10)
-        .map(&:first).map(&:to_i)
+        .map(&:first)
     end
     
     def self.fill_up(set_of_banners, campaign_id)
