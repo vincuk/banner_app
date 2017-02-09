@@ -20,4 +20,4 @@ RUN ["rake", "db:reset"]
 RUN ["rake", "db:import_csv"]
 RUN ["rake", "test:prepare"]
 
-CMD ["server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
